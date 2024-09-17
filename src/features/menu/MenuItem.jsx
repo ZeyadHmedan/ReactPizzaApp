@@ -1,5 +1,4 @@
-// import { useState } from 'react';
-// import PizzaDetails from '../../ui/PizzaDetails';
+
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../ui/Button';
 import { formatCurrency } from '../../utils/helpers';
@@ -12,7 +11,6 @@ function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
   const curQuantity = useSelector(getQuantityById(id));
   const isInCart = curQuantity > 0;
-  // const [isSelected, setIsSelected] = useState(false)
 
   function handleAddItem() {
     const item = {
@@ -24,11 +22,10 @@ function MenuItem({ pizza }) {
     };
     dispatch(addItem(item));
   }
-  //   const handleDetails = (e)=>{
-  // console.log(setIsSelected(true));  }
+ 
   return (
     <>
-      {/* { isSelected &&  <PizzaDetails onSelection = {setIsSelected} pizza ={pizza} />} */}
+   
       <li className="flex gap-4 py-2">
         <img
           src={imageUrl}
